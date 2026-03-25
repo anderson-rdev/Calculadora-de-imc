@@ -1,0 +1,304 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+}
+
+.calculator-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.subtitle {
+    color: #666;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    color: #555;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.btn-calcular {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-top: 10px;
+}
+
+.btn-calcular:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+.btn-calcular:active {
+    transform: translateY(0);
+}
+
+.resultado {
+    margin-top: 30px;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    animation: slideDown 0.5s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.resultado h2 {
+    color: #333;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.imc-valor {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.imc-classificacao {
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 25px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* Cores para cada classificação */
+.resultado.abaixo-peso {
+    background: #e3f2fd;
+    border: 2px solid #2196f3;
+}
+
+.resultado.abaixo-peso .imc-valor {
+    color: #1976d2;
+}
+
+.resultado.abaixo-peso .imc-classificacao {
+    background: #2196f3;
+    color: white;
+}
+
+.resultado.peso-normal {
+    background: #e8f5e9;
+    border: 2px solid #4caf50;
+}
+
+.resultado.peso-normal .imc-valor {
+    color: #2e7d32;
+}
+
+.resultado.peso-normal .imc-classificacao {
+    background: #4caf50;
+    color: white;
+}
+
+.resultado.sobrepeso {
+    background: #fff3e0;
+    border: 2px solid #ff9800;
+}
+
+.resultado.sobrepeso .imc-valor {
+    color: #f57c00;
+}
+
+.resultado.sobrepeso .imc-classificacao {
+    background: #ff9800;
+    color: white;
+}
+
+.resultado.obesidade-1 {
+    background: #fbe9e7;
+    border: 2px solid #ff5722;
+}
+
+.resultado.obesidade-1 .imc-valor {
+    color: #d84315;
+}
+
+.resultado.obesidade-1 .imc-classificacao {
+    background: #ff5722;
+    color: white;
+}
+
+.resultado.obesidade-2 {
+    background: #fce4ec;
+    border: 2px solid #e91e63;
+}
+
+.resultado.obesidade-2 .imc-valor {
+    color: #c2185b;
+}
+
+.resultado.obesidade-2 .imc-classificacao {
+    background: #e91e63;
+    color: white;
+}
+
+.resultado.obesidade-3 {
+    background: #f3e5f5;
+    border: 2px solid #9c27b0;
+}
+
+.resultado.obesidade-3 .imc-valor {
+    color: #7b1fa2;
+}
+
+.resultado.obesidade-3 .imc-classificacao {
+    background: #9c27b0;
+    color: white;
+}
+
+.tabela-referencia {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 2px solid #f0f0f0;
+}
+
+.tabela-referencia h3 {
+    color: #333;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+th {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+}
+
+th:first-child {
+    border-radius: 8px 0 0 0;
+}
+
+th:last-child {
+    border-radius: 0 8px 0 0;
+}
+
+td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+tbody tr:hover {
+    background-color: #f8f8f8;
+}
+
+tbody tr.highlight {
+    background-color: #fff3e0;
+    font-weight: 600;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .calculator-card {
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    .imc-valor {
+        font-size: 2.5rem;
+    }
+
+    .imc-classificacao {
+        font-size: 1.1rem;
+    }
+
+    table {
+        font-size: 0.85rem;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+}
